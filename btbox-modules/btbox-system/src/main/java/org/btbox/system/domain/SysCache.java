@@ -1,8 +1,8 @@
 package org.btbox.system.domain;
 
-import org.btbox.common.core.utils.StringUtils;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.btbox.common.core.utils.StringUtils;
 
 /**
  * 缓存信息

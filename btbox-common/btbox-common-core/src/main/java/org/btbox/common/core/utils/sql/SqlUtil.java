@@ -1,9 +1,9 @@
 package org.btbox.common.core.utils.sql;
 
-import org.btbox.common.core.exception.UtilException;
-import org.btbox.common.core.utils.StringUtils;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.btbox.common.core.exception.UtilException;
+import org.btbox.common.core.utils.StringUtils;
 
 /**
  * sql操作工具类

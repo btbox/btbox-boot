@@ -1,11 +1,11 @@
 package org.btbox.common.core.exception.base;
 
 import lombok.AllArgsConstructor;
-import org.btbox.common.core.utils.MessageUtils;
-import org.btbox.common.core.utils.StringUtils;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.btbox.common.core.utils.MessageUtils;
+import org.btbox.common.core.utils.StringUtils;
 
 import java.io.Serial;
 

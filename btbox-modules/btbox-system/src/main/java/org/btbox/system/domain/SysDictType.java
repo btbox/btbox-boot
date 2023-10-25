@@ -2,9 +2,9 @@ package org.btbox.system.domain;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import org.btbox.common.tenant.core.TenantEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.btbox.common.mybatis.core.domain.BaseEntity;
 
 /**
  * 字典类型表 sys_dict_type
@@ -15,7 +15,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @TableName("sys_dict_type")
-public class SysDictType extends TenantEntity {
+public class SysDictType extends BaseEntity {
 
     /**
      * 字典主键

@@ -75,13 +75,6 @@
                 <version>${revision}</version>
             </dependency>
 
-            <!-- OSS -->
-            <dependency>
-                <groupId>org.btbox</groupId>
-                <artifactId>btbox-common-oss</artifactId>
-                <version>${revision}</version>
-            </dependency>
-
             <!-- 限流 -->
             <dependency>
                 <groupId>org.btbox</groupId>
@@ -96,30 +89,10 @@
                 <version>${revision}</version>
             </dependency>
 
-            <!-- satoken -->
-            <dependency>
-                <groupId>org.btbox</groupId>
-                <artifactId>btbox-common-satoken</artifactId>
-                <version>${revision}</version>
-            </dependency>
-
-            <!-- 安全模块 -->
-            <dependency>
-                <groupId>org.btbox</groupId>
-                <artifactId>btbox-common-security</artifactId>
-                <version>${revision}</version>
-            </dependency>
-
             <!-- 短信模块 -->
             <dependency>
                 <groupId>org.btbox</groupId>
                 <artifactId>btbox-common-sms</artifactId>
-                <version>${revision}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.btbox</groupId>
-                <artifactId>btbox-common-social</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -155,13 +128,6 @@
             <dependency>
                 <groupId>org.btbox</groupId>
                 <artifactId>btbox-common-encrypt</artifactId>
-                <version>${revision}</version>
-            </dependency>
-
-            <!-- 租户模块 -->
-            <dependency>
-                <groupId>org.btbox</groupId>
-                <artifactId>btbox-common-tenant</artifactId>
                 <version>${revision}</version>
             </dependency>
 

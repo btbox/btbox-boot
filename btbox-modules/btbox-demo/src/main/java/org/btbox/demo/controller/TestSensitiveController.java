@@ -1,11 +1,11 @@
 package org.btbox.demo.controller;
 
-import org.btbox.common.core.domain.R;
-import org.btbox.common.web.core.BaseController;
-import org.btbox.common.sensitive.annotation.Sensitive;
-import org.btbox.common.sensitive.core.SensitiveStrategy;
 import lombok.Data;
+import org.btbox.common.core.domain.R;
+import org.btbox.common.sensitive.annotation.Sensitive;
 import org.btbox.common.sensitive.core.SensitiveService;
+import org.btbox.common.sensitive.core.SensitiveStrategy;
+import org.btbox.common.web.core.BaseController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -2,11 +2,11 @@ package org.btbox.common.mybatis.helper;
 
 import cn.hutool.core.convert.Convert;
 import com.baomidou.dynamic.datasource.DynamicRoutingDataSource;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.btbox.common.core.exception.ServiceException;
 import org.btbox.common.core.utils.SpringUtils;
 import org.btbox.common.mybatis.enums.DataBaseType;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 
 import javax.sql.DataSource;
 import java.sql.Connection;

@@ -1,11 +1,9 @@
 package org.btbox.demo.controller.queue;
 
-import cn.dev33.satoken.annotation.SaIgnore;
-import org.btbox.common.core.domain.R;
-import org.btbox.common.redis.utils.QueueUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.redisson.api.RBoundedBlockingQueue;
+import org.btbox.common.core.domain.R;
+import org.btbox.common.redis.utils.QueueUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

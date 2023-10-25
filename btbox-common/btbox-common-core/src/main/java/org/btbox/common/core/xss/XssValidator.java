@@ -2,7 +2,6 @@ package org.btbox.common.core.xss;
 
 import cn.hutool.core.util.ReUtil;
 import cn.hutool.http.HtmlUtil;
-
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 

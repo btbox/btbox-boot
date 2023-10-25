@@ -27,7 +27,6 @@ import org.springframework.context.annotation.Bean;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 /**
  * Swagger 文档配置
@@ -55,10 +54,10 @@ public class SpringDocConfig {
         openApi.tags(properties.getTags());
         openApi.paths(properties.getPaths());
         openApi.components(properties.getComponents());
-        Set<String> keySet = properties.getComponents().getSecuritySchemes().keySet();
+        // Set<String> keySet = properties.getComponents().getSecuritySchemes().keySet();
         List<SecurityRequirement> list = new ArrayList<>();
         SecurityRequirement securityRequirement = new SecurityRequirement();
-        keySet.forEach(securityRequirement::addList);
+        // keySet.forEach(securityRequirement::addList);
         list.add(securityRequirement);
         openApi.security(list);
 

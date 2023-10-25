@@ -1,3 +1,0 @@
-org.btbox.common.security.handler.GlobalExceptionHandler
-org.btbox.common.security.handler.AllUrlHandler
-org.btbox.common.security.config.SecurityConfig

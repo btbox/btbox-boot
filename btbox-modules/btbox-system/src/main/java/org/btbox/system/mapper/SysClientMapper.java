@@ -1,8 +1,8 @@
 package org.btbox.system.mapper;
 
+import org.btbox.common.mybatis.core.mapper.BaseMapperPlus;
 import org.btbox.system.domain.SysClient;
 import org.btbox.system.domain.vo.SysClientVo;
-import org.btbox.common.mybatis.core.mapper.BaseMapperPlus;
 
 /**
  * 授权管理Mapper接口

@@ -5,14 +5,6 @@ import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.ttl.TransmittableThreadLocal;
-import org.btbox.common.core.utils.ServletUtils;
-import org.btbox.common.core.utils.SpringUtils;
-import org.btbox.common.core.utils.StringUtils;
-import org.btbox.common.json.utils.JsonUtils;
-import org.btbox.common.log.annotation.Log;
-import org.btbox.common.log.enums.BusinessStatus;
-import org.btbox.common.log.event.OperLogEvent;
-import org.btbox.common.satoken.utils.LoginHelper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +14,13 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.btbox.common.core.utils.ServletUtils;
+import org.btbox.common.core.utils.SpringUtils;
+import org.btbox.common.core.utils.StringUtils;
+import org.btbox.common.json.utils.JsonUtils;
+import org.btbox.common.log.annotation.Log;
+import org.btbox.common.log.enums.BusinessStatus;
+import org.btbox.common.log.event.OperLogEvent;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.http.HttpMethod;
 import org.springframework.validation.BindingResult;
@@ -88,13 +87,12 @@ public class LogAspect {
 
             // *========数据库日志=========*//
             OperLogEvent operLog = new OperLogEvent();
-            operLog.setTenantId(LoginHelper.getTenantId());
             operLog.setStatus(BusinessStatus.SUCCESS.ordinal());
             // 请求的地址
             String ip = ServletUtils.getClientIP();
             operLog.setOperIp(ip);
             operLog.setOperUrl(StringUtils.substring(ServletUtils.getRequest().getRequestURI(), 0, 255));
-            operLog.setOperName(LoginHelper.getUsername());
+            operLog.setOperName("admin");
 
             if (e != null) {
                 operLog.setStatus(BusinessStatus.FAIL.ordinal());

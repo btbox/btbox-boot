@@ -11,7 +11,6 @@
 
     <modules>
         <module>btbox-demo</module>
-        <module>btbox-generator</module>
         <module>btbox-job</module>
         <module>btbox-system</module>
     </modules>

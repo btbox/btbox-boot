@@ -4,11 +4,10 @@ import cn.hutool.core.collection.CollUtil;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.btbox.common.core.domain.model.LoginUser;
 import org.btbox.common.redis.utils.RedisUtils;
+import org.btbox.common.websocket.constant.WebSocketConstants;
 import org.btbox.common.websocket.dto.WebSocketMessageDto;
 import org.btbox.common.websocket.holder.WebSocketSessionHolder;
-import org.btbox.common.websocket.constant.WebSocketConstants;
 import org.springframework.web.socket.PongMessage;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketMessage;
@@ -105,9 +104,9 @@ public class WebSocketUtils {
         } else {
             try {
                 // 获取当前会话中的用户
-                LoginUser loginUser = (LoginUser) session.getAttributes().get(WebSocketConstants.LOGIN_USER_KEY);
+                Long userId = (Long) session.getAttributes().get(WebSocketConstants.LOGIN_USER_KEY);
                 session.sendMessage(message);
-                log.info("[send] sessionId: {},userId:{},userType:{},message:{}", session.getId(), loginUser.getUserId(), loginUser.getUserType(), message);
+                log.info("[send] sessionId: {},userId:{},message:{}", session.getId(), userId, message);
             } catch (IOException e) {
                 log.error("[send] session({}) 发送消息({}) 异常", session, message, e);
             }

@@ -1,8 +1,8 @@
 package org.btbox.demo.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.btbox.common.core.domain.R;
 import org.btbox.common.redis.utils.RedisUtils;
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

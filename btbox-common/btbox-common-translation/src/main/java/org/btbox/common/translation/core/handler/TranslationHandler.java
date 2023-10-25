@@ -7,11 +7,11 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.ContextualSerializer;
+import lombok.extern.slf4j.Slf4j;
 import org.btbox.common.core.utils.StringUtils;
 import org.btbox.common.core.utils.reflect.ReflectUtils;
 import org.btbox.common.translation.annotation.Translation;
 import org.btbox.common.translation.core.TranslationInterface;
-import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.util.Map;

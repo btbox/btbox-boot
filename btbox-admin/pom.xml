@@ -45,11 +45,6 @@
 
         <dependency>
             <groupId>org.btbox</groupId>
-            <artifactId>btbox-common-social</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.btbox</groupId>
             <artifactId>btbox-system</artifactId>
         </dependency>
 
@@ -58,11 +53,6 @@
         <!--    <artifactId>btbox-job</artifactId>-->
         <!--</dependency>-->
 
-        <!--&lt;!&ndash; 代码生成&ndash;&gt;-->
-        <!--<dependency>-->
-        <!--    <groupId>org.btbox</groupId>-->
-        <!--    <artifactId>btbox-generator</artifactId>-->
-        <!--</dependency>-->
 
         <!--  demo模块  -->
         <dependency>

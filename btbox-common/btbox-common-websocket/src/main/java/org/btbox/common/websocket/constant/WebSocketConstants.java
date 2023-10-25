@@ -25,4 +25,9 @@ public interface WebSocketConstants {
      * 服务端心跳恢复的字符串
      */
     String PONG = "pong";
+
+    /**
+     * 默认用户id
+     */
+    long DEFAULT_USER_ID = 1L;
 }

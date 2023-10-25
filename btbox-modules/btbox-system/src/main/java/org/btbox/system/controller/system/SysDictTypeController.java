@@ -1,6 +1,8 @@
 package org.btbox.system.controller.system;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import org.btbox.common.core.domain.R;
 import org.btbox.common.excel.utils.ExcelUtil;
 import org.btbox.common.log.annotation.Log;
@@ -11,8 +13,6 @@ import org.btbox.common.web.core.BaseController;
 import org.btbox.system.domain.bo.SysDictTypeBo;
 import org.btbox.system.domain.vo.SysDictTypeVo;
 import org.btbox.system.service.ISysDictTypeService;
-import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 

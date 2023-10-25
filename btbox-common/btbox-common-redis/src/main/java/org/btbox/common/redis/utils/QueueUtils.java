@@ -1,8 +1,8 @@
 package org.btbox.common.redis.utils;
 
-import org.btbox.common.core.utils.SpringUtils;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.btbox.common.core.utils.SpringUtils;
 import org.redisson.api.*;
 
 import java.util.concurrent.TimeUnit;

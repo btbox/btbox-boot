@@ -9,7 +9,6 @@ import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInt
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import org.btbox.common.core.factory.YmlPropertySourceFactory;
 import org.btbox.common.mybatis.handler.InjectionMetaObjectHandler;
-import org.btbox.common.mybatis.interceptor.PlusDataPermissionInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -30,20 +29,11 @@ public class MybatisPlusConfig {
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
-        // 数据权限处理
-        interceptor.addInnerInterceptor(dataPermissionInterceptor());
         // 分页插件
         interceptor.addInnerInterceptor(paginationInnerInterceptor());
         // 乐观锁插件
         interceptor.addInnerInterceptor(optimisticLockerInnerInterceptor());
         return interceptor;
-    }
-
-    /**
-     * 数据权限拦截器
-     */
-    public PlusDataPermissionInterceptor dataPermissionInterceptor() {
-        return new PlusDataPermissionInterceptor();
     }
 
     /**

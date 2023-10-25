@@ -2,10 +2,10 @@ package org.btbox.common.core.utils.ip;
 
 import cn.hutool.core.net.NetUtil;
 import cn.hutool.http.HtmlUtil;
-import org.btbox.common.core.utils.StringUtils;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.btbox.common.core.utils.StringUtils;
 
 /**
  * 获取地址类

@@ -1,9 +1,9 @@
 package org.btbox.demo.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.btbox.common.core.domain.R;
 import org.btbox.common.ratelimiter.annotation.RateLimiter;
 import org.btbox.common.ratelimiter.enums.LimitType;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

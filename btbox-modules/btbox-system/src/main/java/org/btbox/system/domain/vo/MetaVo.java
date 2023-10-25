@@ -1,7 +1,7 @@
 package org.btbox.system.domain.vo;
 
-import org.btbox.common.core.utils.StringUtils;
 import lombok.Data;
+import org.btbox.common.core.utils.StringUtils;
 
 /**
  * 路由显示信息

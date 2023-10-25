@@ -1,11 +1,11 @@
 package org.btbox.common.translation.core.impl;
 
+import lombok.AllArgsConstructor;
 import org.btbox.common.core.service.DictService;
 import org.btbox.common.core.utils.StringUtils;
 import org.btbox.common.translation.annotation.TranslationType;
 import org.btbox.common.translation.constant.TransConstant;
 import org.btbox.common.translation.core.TranslationInterface;
-import lombok.AllArgsConstructor;
 
 /**
  * 字典翻译实现

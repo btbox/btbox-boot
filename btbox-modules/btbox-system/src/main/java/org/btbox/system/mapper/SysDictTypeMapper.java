@@ -1,7 +1,7 @@
 package org.btbox.system.mapper;
 
-import org.btbox.system.domain.SysDictType;
 import org.btbox.common.mybatis.core.mapper.BaseMapperPlus;
+import org.btbox.system.domain.SysDictType;
 import org.btbox.system.domain.vo.SysDictTypeVo;
 
 /**

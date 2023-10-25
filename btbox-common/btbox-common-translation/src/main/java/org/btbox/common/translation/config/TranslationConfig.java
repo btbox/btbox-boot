@@ -1,12 +1,12 @@
 package org.btbox.common.translation.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import org.btbox.common.translation.annotation.TranslationType;
 import org.btbox.common.translation.core.TranslationInterface;
 import org.btbox.common.translation.core.handler.TranslationBeanSerializerModifier;
 import org.btbox.common.translation.core.handler.TranslationHandler;
-import jakarta.annotation.PostConstruct;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 

@@ -65,11 +65,6 @@
 
         <dependency>
             <groupId>org.btbox</groupId>
-            <artifactId>btbox-common-security</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.btbox</groupId>
             <artifactId>btbox-common-web</artifactId>
         </dependency>
 
@@ -91,11 +86,6 @@
         <dependency>
             <groupId>org.btbox</groupId>
             <artifactId>btbox-common-encrypt</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.btbox</groupId>
-            <artifactId>btbox-common-tenant</artifactId>
         </dependency>
 
         <dependency>

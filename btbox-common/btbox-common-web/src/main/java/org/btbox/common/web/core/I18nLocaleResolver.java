@@ -1,9 +1,9 @@
 package org.btbox.common.web.core;
 
-import org.springframework.web.servlet.LocaleResolver;
-
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.web.servlet.LocaleResolver;
+
 import java.util.Locale;
 
 /**

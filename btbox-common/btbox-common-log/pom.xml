@@ -19,11 +19,6 @@
 
         <dependency>
             <groupId>org.btbox</groupId>
-            <artifactId>btbox-common-satoken</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.btbox</groupId>
             <artifactId>btbox-common-json</artifactId>
         </dependency>
 

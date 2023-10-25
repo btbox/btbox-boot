@@ -1,8 +1,8 @@
 package org.btbox.demo.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.btbox.common.core.domain.R;
 import org.btbox.common.mail.utils.MailUtils;
-import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

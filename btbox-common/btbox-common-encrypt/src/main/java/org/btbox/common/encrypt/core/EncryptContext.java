@@ -1,8 +1,8 @@
 package org.btbox.common.encrypt.core;
 
+import lombok.Data;
 import org.btbox.common.encrypt.enumd.AlgorithmType;
 import org.btbox.common.encrypt.enumd.EncodeType;
-import lombok.Data;
 
 /**
  * 加密上下文 用于encryptor传递必要的参数。

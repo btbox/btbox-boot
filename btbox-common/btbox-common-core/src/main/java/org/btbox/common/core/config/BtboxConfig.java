@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-@ConfigurationProperties(prefix = "ruoyi")
-public class RuoYiConfig {
+@ConfigurationProperties(prefix = "btbox")
+public class BtboxConfig {
 
     /**
      * 项目名称

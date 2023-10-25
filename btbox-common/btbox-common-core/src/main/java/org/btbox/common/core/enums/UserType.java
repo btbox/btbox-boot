@@ -1,8 +1,8 @@
 package org.btbox.common.core.enums;
 
-import org.btbox.common.core.utils.StringUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.btbox.common.core.utils.StringUtils;
 
 /**
  * 设备类型

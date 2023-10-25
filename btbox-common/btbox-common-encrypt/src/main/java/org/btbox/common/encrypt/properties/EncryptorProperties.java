@@ -1,8 +1,8 @@
 package org.btbox.common.encrypt.properties;
 
+import lombok.Data;
 import org.btbox.common.encrypt.enumd.AlgorithmType;
 import org.btbox.common.encrypt.enumd.EncodeType;
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**

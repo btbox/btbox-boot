@@ -11,7 +11,6 @@
 
     <modules>
         <module>btbox-common-bom</module>
-        <module>btbox-common-social</module>
         <module>btbox-common-core</module>
         <module>btbox-common-doc</module>
         <module>btbox-common-excel</module>
@@ -20,18 +19,14 @@
         <module>btbox-common-log</module>
         <module>btbox-common-mail</module>
         <module>btbox-common-mybatis</module>
-        <module>btbox-common-oss</module>
         <module>btbox-common-ratelimiter</module>
         <module>btbox-common-redis</module>
-        <module>btbox-common-satoken</module>
-        <module>btbox-common-security</module>
         <module>btbox-common-sms</module>
         <module>btbox-common-web</module>
         <module>btbox-common-translation</module>
         <module>btbox-common-sensitive</module>
         <module>btbox-common-json</module>
         <module>btbox-common-encrypt</module>
-        <module>btbox-common-tenant</module>
         <module>btbox-common-websocket</module>
     </modules>
 

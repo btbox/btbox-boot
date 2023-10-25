@@ -2,10 +2,8 @@ package org.btbox.system.domain;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import org.btbox.common.core.constant.UserConstants;
-import org.btbox.common.tenant.core.TenantEntity;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import org.btbox.common.core.constant.UserConstants;
 
 /**
  * 字典数据表 sys_dict_data
@@ -14,9 +12,8 @@ import lombok.EqualsAndHashCode;
  */
 
 @Data
-@EqualsAndHashCode(callSuper = true)
 @TableName("sys_dict_data")
-public class SysDictData extends TenantEntity {
+public class SysDictData{
 
     /**
      * 字典编码

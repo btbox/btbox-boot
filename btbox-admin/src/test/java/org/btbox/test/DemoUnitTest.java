@@ -1,6 +1,6 @@
 package org.btbox.test;
 
-import org.btbox.common.core.config.RuoYiConfig;
+import org.btbox.common.core.config.BtboxConfig;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,19 +17,19 @@ import java.util.concurrent.TimeUnit;
 public class DemoUnitTest {
 
     @Autowired
-    private RuoYiConfig ruoYiConfig;
+    private BtboxConfig btboxConfig;
 
     @DisplayName("测试 @SpringBootTest @Test @DisplayName 注解")
     @Test
     public void testTest() {
-        System.out.println(ruoYiConfig);
+        System.out.println(btboxConfig);
     }
 
     @Disabled
     @DisplayName("测试 @Disabled 注解")
     @Test
     public void testDisabled() {
-        System.out.println(ruoYiConfig);
+        System.out.println(btboxConfig);
     }
 
     @Timeout(value = 2L, unit = TimeUnit.SECONDS)
@@ -37,7 +37,7 @@ public class DemoUnitTest {
     @Test
     public void testTimeout() throws InterruptedException {
         Thread.sleep(3000);
-        System.out.println(ruoYiConfig);
+        System.out.println(btboxConfig);
     }
 
 

@@ -1,7 +1,5 @@
 package org.btbox.common.websocket.interceptor;
 
-import org.btbox.common.core.domain.model.LoginUser;
-import org.btbox.common.satoken.utils.LoginHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.btbox.common.websocket.constant.WebSocketConstants;
 import org.springframework.http.server.ServerHttpRequest;
@@ -30,8 +28,7 @@ public class PlusWebSocketInterceptor implements HandshakeInterceptor {
      */
     @Override
     public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Map<String, Object> attributes) {
-        LoginUser loginUser = LoginHelper.getLoginUser();
-        attributes.put(WebSocketConstants.LOGIN_USER_KEY, loginUser);
+        attributes.put(WebSocketConstants.LOGIN_USER_KEY, WebSocketConstants.DEFAULT_USER_ID);
         return true;
     }
 

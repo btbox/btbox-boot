@@ -37,12 +37,6 @@
             <artifactId>btbox-common-translation</artifactId>
         </dependency>
 
-        <!-- OSS功能模块 -->
-        <dependency>
-            <groupId>org.btbox</groupId>
-            <artifactId>btbox-common-oss</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>org.btbox</groupId>
             <artifactId>btbox-common-log</artifactId>
@@ -58,16 +52,6 @@
         <dependency>
             <groupId>org.btbox</groupId>
             <artifactId>btbox-common-sms</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.btbox</groupId>
-            <artifactId>btbox-common-tenant</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.btbox</groupId>
-            <artifactId>btbox-common-security</artifactId>
         </dependency>
 
         <dependency>

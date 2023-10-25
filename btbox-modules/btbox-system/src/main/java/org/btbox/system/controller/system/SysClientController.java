@@ -1,26 +1,27 @@
 package org.btbox.system.controller.system;
 
-import java.util.List;
-
-import lombok.RequiredArgsConstructor;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.validation.constraints.*;
 import cn.dev33.satoken.annotation.SaCheckPermission;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.validation.annotation.Validated;
-import org.btbox.common.idempotent.annotation.RepeatSubmit;
-import org.btbox.common.log.annotation.Log;
-import org.btbox.common.web.core.BaseController;
-import org.btbox.common.mybatis.core.page.PageQuery;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import lombok.RequiredArgsConstructor;
 import org.btbox.common.core.domain.R;
 import org.btbox.common.core.validate.AddGroup;
 import org.btbox.common.core.validate.EditGroup;
-import org.btbox.common.log.enums.BusinessType;
 import org.btbox.common.excel.utils.ExcelUtil;
-import org.btbox.system.domain.vo.SysClientVo;
-import org.btbox.system.domain.bo.SysClientBo;
-import org.btbox.system.service.ISysClientService;
+import org.btbox.common.idempotent.annotation.RepeatSubmit;
+import org.btbox.common.log.annotation.Log;
+import org.btbox.common.log.enums.BusinessType;
+import org.btbox.common.mybatis.core.page.PageQuery;
 import org.btbox.common.mybatis.core.page.TableDataInfo;
+import org.btbox.common.web.core.BaseController;
+import org.btbox.system.domain.bo.SysClientBo;
+import org.btbox.system.domain.vo.SysClientVo;
+import org.btbox.system.service.ISysClientService;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * 客户端管理

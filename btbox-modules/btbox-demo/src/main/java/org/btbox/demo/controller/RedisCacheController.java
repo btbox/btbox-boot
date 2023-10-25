@@ -1,9 +1,9 @@
 package org.btbox.demo.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.btbox.common.core.constant.CacheNames;
 import org.btbox.common.core.domain.R;
 import org.btbox.common.redis.utils.RedisUtils;
-import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;

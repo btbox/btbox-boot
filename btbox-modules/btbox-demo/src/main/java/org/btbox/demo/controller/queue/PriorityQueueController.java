@@ -1,10 +1,10 @@
 package org.btbox.demo.controller.queue;
 
 import cn.hutool.core.util.RandomUtil;
-import org.btbox.common.core.domain.R;
-import org.btbox.common.redis.utils.QueueUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.btbox.common.core.domain.R;
+import org.btbox.common.redis.utils.QueueUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

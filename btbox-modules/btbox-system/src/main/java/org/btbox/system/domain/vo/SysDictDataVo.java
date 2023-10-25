@@ -2,11 +2,11 @@ package org.btbox.system.domain.vo;
 
 import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
 import com.alibaba.excel.annotation.ExcelProperty;
+import io.github.linpeilie.annotations.AutoMapper;
+import lombok.Data;
 import org.btbox.common.excel.annotation.ExcelDictFormat;
 import org.btbox.common.excel.convert.ExcelDictConvert;
 import org.btbox.system.domain.SysDictData;
-import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;

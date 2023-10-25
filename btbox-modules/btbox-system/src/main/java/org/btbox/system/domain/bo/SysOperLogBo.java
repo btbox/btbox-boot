@@ -1,10 +1,10 @@
 package org.btbox.system.domain.bo;
 
-import org.btbox.common.log.event.OperLogEvent;
-import org.btbox.system.domain.SysOperLog;
 import io.github.linpeilie.annotations.AutoMapper;
 import io.github.linpeilie.annotations.AutoMappers;
 import lombok.Data;
+import org.btbox.common.log.event.OperLogEvent;
+import org.btbox.system.domain.SysOperLog;
 
 import java.util.Date;
 import java.util.HashMap;

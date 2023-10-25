@@ -1,10 +1,10 @@
 package org.btbox.common.web.config;
 
+import jakarta.servlet.DispatcherType;
 import org.btbox.common.core.utils.StringUtils;
 import org.btbox.common.web.config.properties.XssProperties;
 import org.btbox.common.web.filter.RepeatableFilter;
 import org.btbox.common.web.filter.XssFilter;
-import jakarta.servlet.DispatcherType;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

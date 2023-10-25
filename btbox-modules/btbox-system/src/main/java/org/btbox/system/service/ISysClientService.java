@@ -1,10 +1,10 @@
 package org.btbox.system.service;
 
-import org.btbox.system.domain.SysClient;
-import org.btbox.system.domain.vo.SysClientVo;
-import org.btbox.system.domain.bo.SysClientBo;
-import org.btbox.common.mybatis.core.page.TableDataInfo;
 import org.btbox.common.mybatis.core.page.PageQuery;
+import org.btbox.common.mybatis.core.page.TableDataInfo;
+import org.btbox.system.domain.SysClient;
+import org.btbox.system.domain.bo.SysClientBo;
+import org.btbox.system.domain.vo.SysClientVo;
 
 import java.util.Collection;
 import java.util.List;

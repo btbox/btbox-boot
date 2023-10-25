@@ -3,9 +3,9 @@ package org.btbox.common.core.utils.ip;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.io.resource.ClassPathResource;
 import cn.hutool.core.util.ObjectUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.btbox.common.core.exception.ServiceException;
 import org.btbox.common.core.utils.file.FileUtils;
-import lombok.extern.slf4j.Slf4j;
 import org.lionsoul.ip2region.xdb.Searcher;
 
 import java.io.File;
