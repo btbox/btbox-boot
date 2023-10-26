@@ -285,6 +285,12 @@
                 <artifactId>powerjob-worker-spring-boot-starter</artifactId>
                 <version>${powerjob.version}</version>
             </dependency>
+            <!-- PowerJob -->
+            <dependency>
+                <groupId>tech.powerjob</groupId>
+                <artifactId>powerjob-client</artifactId>
+                <version>${powerjob.version}</version>
+            </dependency>
             <dependency>
                 <groupId>tech.powerjob</groupId>
                 <artifactId>powerjob-official-processors</artifactId>

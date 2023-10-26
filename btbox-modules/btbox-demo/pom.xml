@@ -93,6 +93,11 @@
             <artifactId>btbox-common-websocket</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.btbox</groupId>
+            <artifactId>btbox-common-job</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>
