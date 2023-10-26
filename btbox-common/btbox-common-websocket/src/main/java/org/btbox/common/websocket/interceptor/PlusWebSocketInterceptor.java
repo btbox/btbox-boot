@@ -1,12 +1,15 @@
 package org.btbox.common.websocket.interceptor;
 
+import cn.hutool.core.collection.CollUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.btbox.common.websocket.constant.WebSocketConstants;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.server.HandshakeInterceptor;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -28,7 +31,13 @@ public class PlusWebSocketInterceptor implements HandshakeInterceptor {
      */
     @Override
     public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Map<String, Object> attributes) {
-        attributes.put(WebSocketConstants.LOGIN_USER_KEY, WebSocketConstants.DEFAULT_USER_ID);
+        HttpHeaders headers = request.getHeaders();
+        List<String> authorizationHeaders = headers.get(WebSocketConstants.AUTHORIZATION);
+        if (CollUtil.isEmpty(authorizationHeaders)) {
+            log.error("websocket连接头没有请求头:" + WebSocketConstants.AUTHORIZATION);
+            return false;
+        }
+        attributes.put(WebSocketConstants.LOGIN_USER_KEY, Long.valueOf(authorizationHeaders.get(0)));
         return true;
     }
 

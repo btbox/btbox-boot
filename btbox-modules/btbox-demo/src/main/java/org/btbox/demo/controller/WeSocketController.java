@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.function.Consumer;
+
 /**
  * WebSocket 演示案例
  *
@@ -28,6 +30,12 @@ public class WeSocketController {
     @GetMapping("/send")
     public R<Void> send(WebSocketMessageDto dto) throws InterruptedException {
         WebSocketUtils.publishMessage(dto);
+        return R.ok("操作成功");
+    }
+
+    @GetMapping("/sendAll")
+    public R<Void> sendAll(String message) throws InterruptedException {
+        WebSocketUtils.publishAll(message);
         return R.ok("操作成功");
     }
 }

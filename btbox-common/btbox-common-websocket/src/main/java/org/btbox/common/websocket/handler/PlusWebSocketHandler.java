@@ -24,7 +24,7 @@ public class PlusWebSocketHandler extends AbstractWebSocketHandler {
     @Override
     public void afterConnectionEstablished(WebSocketSession session) {
         Long userId = (Long) session.getAttributes().get(WebSocketConstants.LOGIN_USER_KEY);
-        WebSocketSessionHolder.addSession(WebSocketConstants.DEFAULT_USER_ID, session);
+        WebSocketSessionHolder.addSession(userId, session);
         log.info("[connect] sessionId: {},userId:{}", session.getId(), userId);
     }
 
@@ -38,7 +38,8 @@ public class PlusWebSocketHandler extends AbstractWebSocketHandler {
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         log.info("PlusWebSocketHandler, 连接：" + session.getId() + "，已收到消息:" + message.getPayload());
-        List<Long> userIds = List.of(WebSocketConstants.DEFAULT_USER_ID);
+        Long userId = (Long) session.getAttributes().get(WebSocketConstants.LOGIN_USER_KEY);
+        List<Long> userIds = List.of(userId);
         WebSocketMessageDto webSocketMessageDto = new WebSocketMessageDto();
         webSocketMessageDto.setSessionKeys(userIds);
         webSocketMessageDto.setMessage(message.getPayload());
@@ -83,7 +84,7 @@ public class PlusWebSocketHandler extends AbstractWebSocketHandler {
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) {
         Long userId = (Long) session.getAttributes().get(WebSocketConstants.LOGIN_USER_KEY);
-        WebSocketSessionHolder.removeSession(WebSocketConstants.DEFAULT_USER_ID);
+        WebSocketSessionHolder.removeSession(userId);
         log.info("[disconnect] sessionId: {},userId:{}", session.getId(), userId);
     }
 

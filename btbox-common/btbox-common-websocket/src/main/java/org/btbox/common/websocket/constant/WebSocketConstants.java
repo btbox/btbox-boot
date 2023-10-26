@@ -27,7 +27,7 @@ public interface WebSocketConstants {
     String PONG = "pong";
 
     /**
-     * 默认用户id
+     * 校验头
      */
-    long DEFAULT_USER_ID = 1L;
+    String AUTHORIZATION = "Authorization";
 }
