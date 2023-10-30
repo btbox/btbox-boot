@@ -1,5 +1,5 @@
 -- ----------------------------
--- 10、操作日志记录
+-- 1、操作日志记录
 -- ----------------------------
 drop table if exists sys_oper_log;
 create table sys_oper_log (
@@ -29,7 +29,7 @@ create table sys_oper_log (
 
 
 -- ----------------------------
--- 11、字典类型表
+-- 2、字典类型表
 -- ----------------------------
 drop table if exists sys_dict_type;
 create table sys_dict_type
@@ -61,7 +61,7 @@ insert into sys_dict_type values(12, '000000', '设备类型', 'sys_device_type'
 
 
 -- ----------------------------
--- 12、字典数据表
+-- 3、字典数据表
 -- ----------------------------
 drop table if exists sys_dict_data;
 create table sys_dict_data
@@ -121,7 +121,7 @@ insert into sys_dict_data values(38, '000000', 0,  '小程序', 'xcx',       'sy
 
 
 -- ----------------------------
--- 系统授权表
+-- 4、系统授权表
 -- ----------------------------
 drop table if exists sys_client;
 create table sys_client (
@@ -145,3 +145,32 @@ create table sys_client (
 
 insert into sys_client values (1, 'e5cd7e4891bf95d1d19206ce24a7b32e', 'pc', 'pc123', 'password,social', 'pc', 1800, 604800, 0, 0, 103, 1, sysdate(), 1, sysdate());
 insert into sys_client values (2, '428a8310cd442757ae699df5d894f051', 'app', 'app123', 'password,sms,social', 'android', 1800, 604800, 0, 0, 103, 1, sysdate(), 1, sysdate());
+
+-- ----------------------------
+-- 5、文件数据表
+-- ----------------------------
+drop table if exists `file_detail`;
+create table `file_detail`
+(
+    `id`                varchar(32)  not null COMMENT '文件id',
+    `url`               varchar(512) not null COMMENT '文件访问地址',
+    `size`              bigint(20)   default null COMMENT '文件大小，单位字节',
+    `filename`          varchar(256) default null COMMENT '文件名称',
+    `original_filename` varchar(256) default null COMMENT '原始文件名',
+    `base_path`         varchar(256) default null COMMENT '基础存储路径',
+    `path`              varchar(256) default null COMMENT '存储路径',
+    `ext`               varchar(32)  default null COMMENT '文件扩展名',
+    `content_type`      varchar(128)  default null COMMENT 'MIME类型',
+    `platform`          varchar(32)  default null COMMENT '存储平台',
+    `th_url`            varchar(512) default null COMMENT '缩略图访问路径',
+    `th_filename`       varchar(256) default null COMMENT '缩略图名称',
+    `th_size`           bigint(20)   default null COMMENT '缩略图大小，单位字节',
+    `th_content_type`   varchar(128)  default null COMMENT '缩略图MIME类型',
+    `object_id`         varchar(32)  default null COMMENT '文件所属对象id',
+    `object_type`       varchar(32)  default null COMMENT '文件所属对象类型，例如用户头像，评价图片',
+    `attr`              text COMMENT '附加属性',
+    `file_acl`          varchar(32)  default null COMMENT '文件ACL',
+    `th_file_acl`       varchar(32)  default null COMMENT '缩略图文件ACL',
+    `create_time`       datetime     default null COMMENT '创建时间',
+    PRIMARY KEY (`id`) USING BTREE
+) engine=innodb DEFAULT CHARSET = utf8 ROW_FORMAT = DYNAMIC COMMENT ='文件记录表';

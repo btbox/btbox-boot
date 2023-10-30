@@ -38,6 +38,13 @@
             <artifactId>mssql-jdbc</artifactId>
         </dependency>
 
+        <!-- h2数据库 -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.btbox</groupId>
             <artifactId>btbox-common-doc</artifactId>

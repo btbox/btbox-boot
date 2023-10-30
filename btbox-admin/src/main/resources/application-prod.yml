@@ -29,6 +29,15 @@ powerjob:
 
 --- # 数据源配置
 spring:
+  # 如果不使用其他关系型数据库的话，请使用h2或者其他的嵌入式数据库，否则文件下载或者数据字典等无法使用
+  h2:
+    console:
+      # 开启web控制台
+      enabled: true
+      # 访问路径url+/h2
+      path: /h2
+      settings:
+        web-allow-others: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     # 动态数据源文档 https://www.kancloud.cn/tracy5546/dynamic-datasource/content
@@ -43,10 +52,11 @@ spring:
         # 主库数据源
         master:
           type: ${spring.datasource.type}
-          driverClassName: com.mysql.cj.jdbc.Driver
-          # jdbc 所有参数配置参考 https://lionli.blog.csdn.net/article/details/122018562
-          # rewriteBatchedStatements=true 批处理优化 大幅提升批量插入更新删除性能(对数据库有性能损耗 使用批量操作应考虑性能问题)
-          url: jdbc:mysql://localhost:3306/btbox-boot?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&autoReconnect=true&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+          driverClassName: org.h2.Driver
+          # MODE=MYSQL; 是MYSQL的模式也就是模拟其他数据库系统的行为和语法
+          # CASE_INSENSITIVE_IDENTIFIERS=TRUE;不进行区分大小写配置，可以看数据库需要选择配置
+          # AUTO_SERVER=TRUE 自动服务器模式，它将允许多个进程同时连接到同一个数据库，而不需要手动启动服务器进程。自动服务器模式会在第一个连接请求到达时自动启动服务器，然后处理后续的连接请求。
+          url: jdbc:h2:./db/btbox-boot;MODE=MYSQL;AUTO_SERVER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;
           username: root
           password: root
         # 从库数据源
