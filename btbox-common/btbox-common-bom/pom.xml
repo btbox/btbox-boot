@@ -138,6 +138,13 @@
                 <version>${revision}</version>
             </dependency>
 
+            <!-- Oss模块 -->
+            <dependency>
+                <groupId>org.btbox</groupId>
+                <artifactId>btbox-common-oss</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

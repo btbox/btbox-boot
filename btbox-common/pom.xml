@@ -28,6 +28,7 @@
         <module>btbox-common-json</module>
         <module>btbox-common-encrypt</module>
         <module>btbox-common-websocket</module>
+        <module>btbox-common-oss</module>
     </modules>
 
     <artifactId>btbox-common</artifactId>
