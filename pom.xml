@@ -13,7 +13,7 @@
     <description>btbox-boot后台脚手架</description>
 
     <properties>
-        <revision>5.1.0</revision>
+        <revision>1.0.0</revision>
         <spring-boot.version>3.1.5</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
