@@ -1,7 +1,7 @@
 # 项目相关配置
 btbox:
   # 名称
-  name: RuoYi-Vue-Plus
+  name: BTBOX-BOOT
   # 版本
   version: ${revision}
   # 版权年份
