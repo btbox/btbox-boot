@@ -172,6 +172,9 @@ lock4j:
 
 --- # Actuator 监控端点的配置项
 management:
+  metrics:
+    tags:
+      application: ${spring.application.name}
   endpoints:
     web:
       exposure:
@@ -181,6 +184,8 @@ management:
       show-details: ALWAYS
     logfile:
       external-file: ./logs/sys-console.log
+    prometheus:
+      enabled: true
 
 --- # websocket
 websocket:
