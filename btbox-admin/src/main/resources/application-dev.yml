@@ -204,7 +204,7 @@ dromara:
         storage-path: D:/Temp/ # 存储路径
 
 license:
-  enable: false
+  enable: true
   subject: ${spring.application.name}
   public-alias: publicCert
   store-pass: public_password1234

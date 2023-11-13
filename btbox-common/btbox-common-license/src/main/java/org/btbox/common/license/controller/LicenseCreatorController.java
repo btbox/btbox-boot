@@ -3,12 +3,13 @@ package org.btbox.common.license.controller;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.btbox.common.core.domain.R;
-import org.btbox.common.json.utils.JsonUtils;
 import org.btbox.common.license.properties.LicenseVerifyProperties;
 import org.btbox.common.license.utils.*;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.web.bind.annotation.*;
 
 
+@ConditionalOnProperty(name = "license.enable", havingValue = "true")
 @RestController
 @RequestMapping("/license")
 @RequiredArgsConstructor
@@ -77,7 +78,30 @@ public class LicenseCreatorController {
         LicenseCreator licenseCreator = new LicenseCreator(param);
         boolean result = licenseCreator.generateLicense();
 
-        return result ? R.ok(param) : R.fail("证书文件生成失败");
+        if (result) {
+            LicenseVerify licenseVerify = new LicenseVerify();
+
+            //安装证书
+            licenseVerify.install(licenseVerifyProperties);
+            return R.ok(param);
+        } else {
+            return R.fail("证书文件生成失败");
+        }
+    }
+
+    /**
+     * 安装证书
+     * @return
+     */
+    @PostMapping("install-license")
+    public R<Void> installLicense() {
+
+        LicenseVerify licenseVerify = new LicenseVerify();
+
+        //安装证书
+        licenseVerify.install(licenseVerifyProperties);
+
+        return R.ok();
     }
 
 }
