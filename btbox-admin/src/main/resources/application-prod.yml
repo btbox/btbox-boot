@@ -205,3 +205,11 @@ dromara:
         base-path: local-plus/ # 基础路径
         path-patterns: /local-plus/** # 访问路径
         storage-path: D:/Temp/ # 存储路径
+
+license:
+  enable: false
+  subject: ${spring.application.name}
+  public-alias: publicCert
+  store-pass: public_password1234
+  license-path: D:/license/license.lic
+  public-keys-store-path: D:/license/publicCerts.keystore

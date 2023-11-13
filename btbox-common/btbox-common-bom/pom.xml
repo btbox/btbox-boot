@@ -145,6 +145,13 @@
                 <version>${revision}</version>
             </dependency>
 
+            <!-- license模块证书管理引擎 -->
+            <dependency>
+                <groupId>org.btbox</groupId>
+                <artifactId>btbox-common-license</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
