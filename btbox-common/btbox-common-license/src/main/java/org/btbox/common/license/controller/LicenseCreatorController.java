@@ -1,6 +1,7 @@
 package org.btbox.common.license.controller;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.btbox.common.core.domain.R;
 import org.btbox.common.license.properties.LicenseVerifyProperties;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/license")
 @RequiredArgsConstructor
+@Slf4j
 public class LicenseCreatorController {
 
     private final LicenseVerifyProperties licenseVerifyProperties;
@@ -71,6 +73,7 @@ public class LicenseCreatorController {
      */
     @PostMapping(value = "/generate-license")
     public R<LicenseCreatorParam> generateLicense(@RequestBody LicenseCreatorParam param) {
+
         if(StringUtils.isBlank(param.getLicensePath())){
             param.setLicensePath(licenseVerifyProperties.getLicensePath());
         }
@@ -82,7 +85,9 @@ public class LicenseCreatorController {
             LicenseVerify licenseVerify = new LicenseVerify();
 
             //安装证书
+            log.info("++++++++ 开始安装证书 ++++++++");
             licenseVerify.install(licenseVerifyProperties);
+            log.info("++++++++ 证书安装结束 ++++++++");
             return R.ok(param);
         } else {
             return R.fail("证书文件生成失败");
