@@ -6,14 +6,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.btbox.common.core.constant.HttpStatus;
 import org.btbox.common.core.domain.R;
-import org.btbox.common.core.exception.ServiceException;
 import org.btbox.common.core.utils.MessageUtils;
 import org.btbox.common.json.utils.JsonUtils;
 import org.btbox.common.license.utils.LicenseVerify;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.web.servlet.HandlerInterceptor;
-
-import java.util.HashMap;
-import java.util.Map;
 
 
 @Slf4j
@@ -29,7 +26,8 @@ public class LicenseCheckInterceptor implements HandlerInterceptor {
         if(verifyResult){
             return true;
         }else{
-            response.setCharacterEncoding("utf-8");
+            response.setContentType("application/json;charset=UTF-8");
+            response.setCharacterEncoding("UTF-8");
             response.setStatus(HttpStatus.FORBIDDEN);
             response.getWriter().write(JsonUtils.toJsonString(R.fail(HttpStatus.FORBIDDEN, MessageUtils.message("license.expired"))));
             return false;
