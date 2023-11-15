@@ -27,7 +27,7 @@ TrueLicense（打开新窗口）是JVM上用于许可证管理的开源引擎。
 ## 三、添加秘钥
 
 ```shell
-keytool -genkeypair -keyalg RSA -validity 3650 -alias "privateKey" -keystore "privateKeys.keystore" -storetype JKS -storepass "public_password1234" -keypass "private_password1234" -dname "CN=localhost, OU=localhost, O=localhost, L=SH, ST=SH, C=CN"
+keytool -genkeypair -keysize 1024 -validity 3650 -alias "privateKey" -keystore "privateKeys.keystore" -storepass "public_password1234" -keypass "private_password1234" -dname "CN=localhost, OU=localhost, O=localhost, L=SH, ST=SH, C=CN"
 
 # 导出命令
 keytool -exportcert -alias "privateKey" -keystore "privateKeys.keystore" -storepass "public_password1234" -file "certfile.cer"
@@ -35,28 +35,6 @@ keytool -exportcert -alias "privateKey" -keystore "privateKeys.keystore" -storep
 #导入命令
 keytool -import -alias "publicCert" -file "certfile.cer" -keystore "publicCerts.keystore" -storepass "public_password1234"
 ```
-
-```shell
-keytool -genkeypair -keyalg RSA -validity 3650 -alias "privateKey" -keystore "privateKeys.keystore" -storepass "public_password1234" -keypass "private_password1234" -dname "CN=localhost, OU=localhost, O=localhost, L=SH, ST=SH, C=CN"
-```
-
-
-
-```shell
-keytool -genkeypair -keysize 1024 -validity 3650 -alias "privateKey" -keyalg RSA -dname "CN=xiao.asia, OU=development, O=dianyan, L=luan, ST=anhui, C=china"  -storepass "public_password1234" -keypass "private_password1234" -keystore "privateKeys.keystore"
-```
-
-
-
-```
-keytool -genkey -alias privateKey -keyalg RSA -keysize 1024 -keypass public_password1234 -storepass public_password1234 -dname "CN=localhost,OU=csoa,O=csoa,L=FZ,ST=FZ,C=CN" -validity 3600 -keystore privateKeys.keystore
-```
-
-
-
-
-
-
 
 ## 四、如何使用
 

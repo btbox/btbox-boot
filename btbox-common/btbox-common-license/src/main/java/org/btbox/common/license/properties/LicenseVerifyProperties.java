@@ -39,6 +39,11 @@ public class LicenseVerifyProperties {
     private String licensePath;
 
     /**
+     * 加密文件
+     */
+    private String licenseTxt;
+
+    /**
      * 密钥库存储路径
      */
     private String publicKeysStorePath;

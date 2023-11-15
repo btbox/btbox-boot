@@ -194,3 +194,20 @@ websocket:
   path: /resource/websocket
   # 设置访问源地址
   allowedOrigins: '*'
+
+# 证书校验
+license:
+  # 是否启用
+  enable: true
+  # 项目的名称
+  subject: ${spring.application.name}
+  # 公钥别名
+  public-alias: publicCert
+  # 密码
+  store-pass: public_password1234
+  # 要校验的license.lic文件路径
+  license-path: D:/license/license.lic
+  # 加密文件
+  license-txt: D:/license/license.txt
+  # 公钥文件地址
+  public-keys-store-path: D:/license/publicCerts.keystore
