@@ -8,7 +8,9 @@ import java.lang.management.ManagementFactory;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * 时间工具类
@@ -160,5 +162,35 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
         LocalDateTime localDateTime = LocalDateTime.of(temporalAccessor, LocalTime.of(0, 0, 0));
         ZonedDateTime zdt = localDateTime.atZone(ZoneId.systemDefault());
         return Date.from(zdt.toInstant());
+    }
+
+    /**
+     * 获取今天的最早时间
+     * @author: BT-BOX(HJH)
+     * @param
+     * @version: 1.0
+     * @createDate: 2023/2/26 0:28
+     * @return: com.ht.media_bi.utils.StartEndDate
+     */
+    public static String toDayStartTime() {
+        //获取当天开始时间，结束时间
+        DateTimeFormatter localDateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss", Locale.SIMPLIFIED_CHINESE);
+        // 2023-02-17 00:00:00
+        return LocalDateTime.of(LocalDate.now(), LocalTime.MIN).format(localDateTimeFormatter);
+    }
+
+    /**
+     * 获取今天的最晚时间
+     * @author: BT-BOX(HJH)
+     * @param
+     * @version: 1.0
+     * @createDate: 2023/2/26 0:28
+     * @return: com.ht.media_bi.utils.StartEndDate
+     */
+    public static String toDayLastEndTime() {
+        //获取当天开始时间，结束时间
+        DateTimeFormatter localDateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss", Locale.SIMPLIFIED_CHINESE);
+        // 2022-02-17 23:59:59
+        return LocalDateTime.of(LocalDate.now(), LocalTime.MAX).format(localDateTimeFormatter);
     }
 }
