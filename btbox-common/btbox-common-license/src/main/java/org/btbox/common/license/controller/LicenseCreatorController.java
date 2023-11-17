@@ -109,4 +109,14 @@ public class LicenseCreatorController {
         return R.ok();
     }
 
+    @GetMapping("test-license")
+    public R<Void> testLicense() {
+        // 校验加密文件 license.txt
+        LicenseVerify licenseVerify = new LicenseVerify();
+        licenseVerify.licenseCryptoFile(true);
+        return R.ok();
+    }
+
+
+
 }
