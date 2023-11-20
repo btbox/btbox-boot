@@ -48,4 +48,14 @@ public class LicenseVerifyProperties {
      */
     private String publicKeysStorePath;
 
+    /**
+     * 加密密码
+     */
+    private String licenseTxtPwd;
+
+    /**
+     * 加密偏移量
+     */
+    private String licenseTxtLv;
+
 }

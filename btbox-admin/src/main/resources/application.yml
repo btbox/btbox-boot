@@ -198,7 +198,7 @@ websocket:
 # 证书校验
 license:
   # 是否启用
-  enable: true
+  enable: false
   # 项目的名称
   subject: ${spring.application.name}
   # 公钥别名
@@ -211,3 +211,7 @@ license:
   license-txt: D:/license/license.txt
   # 公钥文件地址
   public-keys-store-path: D:/license/publicCerts.keystore
+  # 加密密码
+  license-txt-pwd: DYgjCEIMVrj2W9xN
+  # 加密偏移量
+  license-txt-lv: DYgjCEIMVrj2W9xN

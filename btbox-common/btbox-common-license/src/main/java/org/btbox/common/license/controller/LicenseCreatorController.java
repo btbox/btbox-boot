@@ -83,10 +83,12 @@ public class LicenseCreatorController {
 
         if (result) {
             LicenseVerify licenseVerify = new LicenseVerify();
-
             //安装证书
             log.info("++++++++ 开始安装证书 ++++++++");
             licenseVerify.install(licenseVerifyProperties);
+            // 校验加密文件 license.txt
+            LicenseTxtVerify licenseTxtVerify = new LicenseTxtVerify();
+            licenseTxtVerify.licenseCryptoFile(true);
             log.info("++++++++ 证书安装结束 ++++++++");
             return R.ok(param);
         } else {
@@ -112,8 +114,8 @@ public class LicenseCreatorController {
     @GetMapping("test-license")
     public R<Void> testLicense() {
         // 校验加密文件 license.txt
-        LicenseVerify licenseVerify = new LicenseVerify();
-        licenseVerify.licenseCryptoFile(true);
+        LicenseTxtVerify licenseTxtVerify = new LicenseTxtVerify();
+        licenseTxtVerify.licenseCryptoFile(false);
         return R.ok();
     }
 
