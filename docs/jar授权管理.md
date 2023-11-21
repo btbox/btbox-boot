@@ -27,29 +27,36 @@ TrueLicense（打开新窗口）是JVM上用于许可证管理的开源引擎。
 ## 三、添加秘钥
 
 ```shell
+# 生成证书,只能用jdk8，openJdk的算法貌似有问题
 keytool -genkeypair -keysize 1024 -validity 3650 -alias "privateKey" -keystore "privateKeys.keystore" -storepass "public_password1234" -keypass "private_password1234" -dname "CN=localhost, OU=localhost, O=localhost, L=SH, ST=SH, C=CN"
-
+```
+```shell
 # 导出命令
 keytool -exportcert -alias "privateKey" -keystore "privateKeys.keystore" -storepass "public_password1234" -file "certfile.cer"
 
+```
+```shell
 #导入命令
 keytool -import -alias "publicCert" -file "certfile.cer" -keystore "publicCerts.keystore" -storepass "public_password1234"
+
 ```
 
 ## 四、如何使用
 
-1. 首先确保已经添加了依赖模块 btbox-common-license ，例如在btbox-admin模块下添加依赖
+### 1. 添加依赖
 
-   ```xml
-   <dependency>
-       <groupId>org.btbox</groupId>
-       <artifactId>btbox-common-license</artifactId>
-   </dependency>
-   ```
+- 首先确保已经添加了依赖模块 btbox-common-license ，例如在btbox-admin模块下添加依赖
 
-2. 在配置文件中添加如下配置
+```xml
+<dependency>
+    <groupId>org.btbox</groupId>
+    <artifactId>btbox-common-license</artifactId>
+</dependency>
+```
 
-   ```yml
+### 2. 在配置文件中添加如下配置
+
+```yml
    # 证书校验
    license:
      # 是否启用
@@ -64,6 +71,60 @@ keytool -import -alias "publicCert" -file "certfile.cer" -keystore "publicCerts.
      license-path: D:/license/license.lic
      # 公钥文件地址
      public-keys-store-path: D:/license/publicCerts.keystore
-   ```
+     # 加密密码
+     license-txt-pwd: jkadsivvBqkwwpx&
+     # 加密偏移量
+     license-txt-lv: $qcagkspqNatupyf
+```
 
    
+
+### 3. 生成证书 license.lic
+
+- 接口地址: /license/generate-license
+
+- 请求参数: 
+
+  ```json
+  {
+      "subject": "license_demo",
+      "privateAlias": "privateKey",
+      "keyPass": "private_password1234",
+      "storePass": "public_password1234",
+      "licensePath": "D:/license/license.lic",
+      "privateKeysStorePath": "D:/license/privateKeys.keystore",
+      "issuedTime": "2022-04-10 00:00:01",
+      "expiryTime": "2022-05-31 23:59:59",
+      "consumerType": "User",
+      "consumerAmount": 1,
+      "description": "这是证书描述信息",
+      "licenseCheckModel": {
+          "ipAddress": [],
+          "macAddress": [],
+          "cpuSerial": "",
+          "mainBoardSerial": ""
+      }
+  }
+  ```
+
+- 参数说明请看 `LicenseCreatorParam` 和` LicenseCheckModel` 这两个类
+
+- 发送请求后会生成 license.lic  授权文件在 D:/license 目录下
+
+- 同时也会生成 license.txt 加密文件在 D:/license 目录下，主要用于离线部署的时候定时校验应用使用的时间正确性，避免用户修改电脑的时间后无法准确定位时间
+
+
+
+
+
+## 五、大致流程图
+
+```mermaid
+sequenceDiagram
+    供应商->>+客户: 在客户机上生成秘钥
+    供应商->>+客户: 生成license.lic和license.txt授权文件
+    客户->>+客户: 启动应用进行证书校验
+    客户->>+客户: 每次API拦截证书是否通过
+    客户->>+客户: 定时器时每五分钟更新license.txt时间,防止客户更改服务器时间
+```
+

@@ -186,16 +186,14 @@ public class LicenseTxtVerify {
                 // iv加盐，按照实际需求添加
                 "$qcagkspqNatupyf".getBytes());
 
-// 加密为16进制表示
+        // 加密为16进制表示
         String encryptHex = aes.encryptHex(content);
 
         System.out.println("encryptHex = " + encryptHex);
-// 解密
+        // 解密
         String decryptStr = aes.decryptStr(encryptHex);
 
         System.out.println("decryptStr = " + decryptStr);
-
-        // 1eccecebe3dbd54e64e81e2e494d9351fd04ed07cd6ac63c1162baddfc9aa819
     }
 
 }

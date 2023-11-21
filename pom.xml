@@ -63,6 +63,7 @@
         <forest.version>1.5.33</forest.version>
         <!-- xjar代码混淆 https://github.com/core-lib/xjar -->
         <xjar.version>4.0.2</xjar.version>
+        <truelicense.version>1.33</truelicense.version>
     </properties>
 
     <profiles>
@@ -351,6 +352,13 @@
                 <groupId>com.github.core-lib</groupId>
                 <artifactId>xjar</artifactId>
                 <version>${xjar.version}</version>
+            </dependency>
+
+            <!-- License -->
+            <dependency>
+                <groupId>de.schlichtherle.truelicense</groupId>
+                <artifactId>truelicense-core</artifactId>
+                <version>${truelicense.version}</version>
             </dependency>
 
             <dependency>
