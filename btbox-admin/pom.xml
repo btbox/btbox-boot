@@ -101,11 +101,10 @@
         </dependency>
 
 
-        <!--&lt;!&ndash; 添加 XJar 依赖 &ndash;&gt;-->
+        <!-- 代码混淆 -->
         <dependency>
             <groupId>com.github.core-lib</groupId>
             <artifactId>xjar</artifactId>
-            <version>4.0.2</version>
         </dependency>
     </dependencies>
 
@@ -138,9 +137,51 @@
                     <warName>${project.artifactId}</warName>
                 </configuration>
             </plugin>
+            <!-- 代码混淆插件部署后会在target目录下生成xjar目录里面是加密后的jar -->
+            <plugin>
+                <groupId>com.github.core-lib</groupId>
+                <artifactId>xjar-maven-plugin</artifactId>
+                <version>4.0.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <!-- 或使用
+                        <phase>install</phase>
+                        -->
+                        <configuration>
+                            <password>123</password>
+                            <!-- optional
+                            <algorithm/>
+                            <keySize/>
+                            <ivSize/>
+                            <includes>
+                                <include/>
+                            </includes>
+                            <excludes>
+                                <exclude/>
+                            </excludes>
+                            <sourceDir/>
+                            <sourceJar/>
+                            <targetDir/>
+                            <targetJar/>
+                            -->
+                            <!--静态资源不混淆-->
+                            <excludes>
+                                <exclude>static/**</exclude>
+                            </excludes>
+                            <!-- 生成加密的jar文件路径 -->
+                            <targetDir>target/xjar</targetDir>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
-    </plugins>
+        </plugins>
     </build>
+
 
     <!-- 设置 jitpack.io 仓库 -->
     <repositories>

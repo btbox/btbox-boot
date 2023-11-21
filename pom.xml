@@ -60,9 +60,9 @@
         <flatten-maven-plugin.version>1.3.0</flatten-maven-plugin.version>
         <!-- 第三方文件上传框架 https://x-file-storage.xuyanwu.cn/ -->
         <x-file.version>2.0.0</x-file.version>
-        <!-- 证书管理 -->
-        <truelicense.version>1.33</truelicense.version>
-
+        <forest.version>1.5.33</forest.version>
+        <!-- xjar代码混淆 https://github.com/core-lib/xjar -->
+        <xjar.version>4.0.2</xjar.version>
     </properties>
 
     <profiles>
@@ -341,9 +341,16 @@
             </dependency>
 
             <dependency>
-                <groupId>de.schlichtherle.truelicense</groupId>
-                <artifactId>truelicense-core</artifactId>
-                <version>${truelicense.version}</version>
+                <groupId>com.dtflys.forest</groupId>
+                <artifactId>forest-spring-boot3-starter</artifactId>
+                <version>${forest.version}</version>
+            </dependency>
+
+            <!-- 代码混淆 -->
+            <dependency>
+                <groupId>com.github.core-lib</groupId>
+                <artifactId>xjar</artifactId>
+                <version>${xjar.version}</version>
             </dependency>
 
             <dependency>
@@ -491,6 +498,11 @@
                 <enabled>true</enabled>
             </releases>
         </repository>
+        <!-- 设置 jitpack.io 仓库 -->
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <pluginRepositories>
@@ -504,6 +516,10 @@
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
         </pluginRepository>
     </pluginRepositories>
 

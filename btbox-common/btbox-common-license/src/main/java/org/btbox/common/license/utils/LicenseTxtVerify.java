@@ -178,57 +178,13 @@ public class LicenseTxtVerify {
         }
     }
 
-//     public static void main(String[] args) {
-// //         String content = "BTBOX-BOOT:2023-11-11 11:11:11";
-//         AES aes = new AES("CBC", "PKCS7Padding",
-//                 // 密钥，可以自定义
-//                 "DYgjCEIMVrj2W9xN".getBytes(),
-//                 // iv加盐，按照实际需求添加
-//                 "DYgjCEIMVrj2W9xN".getBytes());
-// //
-// // // 加密为16进制表示
-// //         String encryptHex = aes.encryptHex(content);
-// //
-// //         System.out.println("encryptHex = " + encryptHex);
-// // // 解密
-// //         String decryptStr = aes.decryptStr(encryptHex);
-// //
-// //         System.out.println("decryptStr = " + decryptStr);
-//
-//         BufferedInputStream in = FileUtils.getInputStream("D:/license/license.txt");
-//         String content = IoUtil.readUtf8(in);
-//
-//         String decryptStr = aes.decryptStr(content);
-//
-//         System.out.println("decryptStr = " + decryptStr);
-//
-//
-//         String[] split = StringUtils.split(decryptStr, ";");
-//
-//         // 项目名称
-//         String subjectName = split[0];
-//         System.out.println("subjectName = " + subjectName);
-//         // 时间
-//         String dateTime = split[1];
-//
-//         System.out.println("dateTime = " + dateTime);
-//
-//
-//         LocalDateTime fileDatedTime = LocalDateTime.parse(dateTime, DateTimeFormatter.ofPattern(DateUtils.YYYY_MM_DD_HH_MM_SS));
-//         // 将当前获取的时间 +5分钟
-//         LocalDateTime localDateTime = fileDatedTime.plusMinutes(5);
-//
-//         System.out.println("datedTime = " + localDateTime.toString());
-//
-//     }
-
     public static void main(String[] args) {
         String content = "BTBOX-BOOT;2023-11-11 11:55:50";
         AES aes = new AES("CBC", "PKCS7Padding",
                 // 密钥，可以自定义
-                "DYgjCEIMVrj2W9xN".getBytes(),
+                "jkadsivvBqkwwpx&".getBytes(),
                 // iv加盐，按照实际需求添加
-                "DYgjCEIMVrj2W9xN".getBytes());
+                "$qcagkspqNatupyf".getBytes());
 
 // 加密为16进制表示
         String encryptHex = aes.encryptHex(content);
