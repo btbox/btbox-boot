@@ -177,6 +177,8 @@ management:
       application: ${spring.application.name}
   endpoints:
     web:
+      # 监控的基础路径默认 actuator
+#      base-path: /myactuator
       exposure:
         include: '*'
   endpoint:

@@ -51,7 +51,8 @@
         <commons-io.version>2.13.0</commons-io.version>
         <!-- 限制框架中的fastjson版本 -->
         <fastjson.version>1.2.83</fastjson.version>
-
+        <!-- prometheus -->
+        <prometheus.version>1.11.5</prometheus.version>
         <!-- 插件版本 -->
         <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
         <maven-war-plugin.version>3.2.2</maven-war-plugin.version>
@@ -359,6 +360,13 @@
                 <groupId>de.schlichtherle.truelicense</groupId>
                 <artifactId>truelicense-core</artifactId>
                 <version>${truelicense.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-registry-prometheus</artifactId>
+                <scope>runtime</scope>
+                <version>${prometheus.version}</version>
             </dependency>
 
             <dependency>
